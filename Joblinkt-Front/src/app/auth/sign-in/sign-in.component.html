@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="left">
+        <button class="secondary-button" [routerLink]="['/dashboard']">Sign In</button>
+        <button class="secondary-button" [routerLink]="['/dashboard']">Sign In</button>
+    </div>
+    <div class="right">
+        <div class="logo">Logo</div>
+        <h2>Welcome back</h2>
+        <form [formGroup]="loginForm"  style="text-align: center;">
+            <mat-form-field appearance="outline">
+              <mat-label>Username*</mat-label>
+              <input formControlName="username" matInput placeholder="Username">
+              
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Password*</mat-label>
+              <input formControlName="password" matInput placeholder="Password" 
+                [type]="hidePassword ? 'password' : 'text'">
+             
+             
+            </mat-form-field>
+          </form>
+          <button class="primary-button" [routerLink]="['/dashboard']">Sign In</button>
+    </div>
+</div>

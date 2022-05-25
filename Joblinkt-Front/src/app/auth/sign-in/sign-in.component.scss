@@ -1,0 +1,69 @@
+@use '../../../base-style'as base;
+
+.container {
+    min-height: 100vh;
+    /* Create the parallax scrolling effect */
+   width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.content {
+    background-color: white;
+    width: 30%;
+    display: flex;
+    align-self: center;
+    border-radius: base.$border-radius;
+    padding: 30px;
+    padding-bottom: 60px;
+    align-items: center;
+    flex-direction: column;
+}
+.left{
+    width: 40%;;
+    background-image: base.$primary-gradient;
+}
+.right{
+    width: 60%;
+    padding:30px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+   color:base.$primary-color;
+   font-size: 50px;
+   padding: 20px;;
+}
+
+#logo:hover {
+    cursor: pointer;
+}
+
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    justify-content: center;
+}
+
+.primary-button {
+    margin-top: 30px;
+    @extend %primary-button
+}
+
+.primary-button:hover {
+    @extend %primary-button-hover
+}
+
+#sign-up {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#sign-up:hover {
+    color: base.$primary-color;
+}
