@@ -36,12 +36,11 @@ h2{
     font-size: 20px;
     font-weight: 550;
 }
-.sign-in{
-    background-color: white;
-    color:base.$secondary-color;
-}
 .sign-up{
     top:280px;
+    background-color: white;
+    color:base.$secondary-color
+    
 }
 .sign-in:hover,.sign-up:hover{
    cursor: pointer;
@@ -57,6 +56,7 @@ h2{
     position: relative;
 }
 .right{
+    margin-top:30px;
     width: 60%;
     padding:30px;
     justify-content: center;
@@ -89,7 +89,18 @@ form {
     width: 200px;
     @extend %primary-button
 }
+mat-radio-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
+.gender {
+    display: flex;
+    color: rgb(116, 116, 116);
+    margin: 20px 0px 20px 10px;
+    font-size: 15px;
+}
 .primary-button:hover {
     @extend %primary-button-hover
 }
