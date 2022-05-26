@@ -11,7 +11,6 @@
 .content {
     width: 70%;
     height: 100vh;
-    padding: 20px;
     margin-top: 100px;
     display: flex;
     flex-direction: row;
@@ -24,26 +23,25 @@
     align-items: center;
     flex-direction: column;
     gap: 10px;
-    flex-grow: 1;
+    width: 20%;
 }
 
 .filters-title {
-    width: 80%;
+    width: 100%;
     font-size: 20px;
     margin-bottom: 20px;;
 }
 
 .right {
     display: flex;
-    flex-grow: 5;
-    display: flex;
     flex-direction: column;
     gap:20px;
+    width: 80%;
     align-items: center;
 }
 
 .mat-form-field {
-    width: 90%;
+    width: 100%;
 }
 .search{
     display: flex;
@@ -111,7 +109,7 @@
 }
 .primary-button {
     margin: 0;
-    font-size: 18px;
+    font-size: 16px;
     width: 180px;
     margin-top:5px;
     @extend %primary-button

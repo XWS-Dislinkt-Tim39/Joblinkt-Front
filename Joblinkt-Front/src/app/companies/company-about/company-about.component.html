@@ -1,6 +1,7 @@
 <app-navbar></app-navbar>
 <div class="container">
     <div class="header">
+        <div class="about">
         <div class="head">
             <div class="image">
                 <img
@@ -14,33 +15,18 @@
             </div>
             <div class="mat-h2">4.7</div>
         </div>
+        </div>
 
 
     </div>
     <div class="content">
         <div class="left">
-            <mat-form-field appearance="outline">
-                <mat-label>Favorite food</mat-label>
-                <mat-select panelClass="panel">
-                    <mat-option>
-                        Option 1
-                    </mat-option>
-                    <mat-option>
-                        Option 2
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label>Favorite food</mat-label>
-                <mat-select panelClass="panel">
-                    <mat-option>
-                        Option 1
-                    </mat-option>
-                    <mat-option>
-                        Option 2
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
+           <div class="menu">
+            <button class="menu-button first"  [routerLink]="['/dashboard']">About Comapany<mat-icon>play_arrow</mat-icon></button>
+            <button class="menu-button" [routerLink]="['/dashboard']">Comments<mat-icon>play_arrow</mat-icon></button>
+            <button class="menu-button" [routerLink]="['/dashboard']">Interviews<mat-icon>play_arrow</mat-icon></button>
+            <button class="menu-button last" [routerLink]="['/dashboard']">Salary<mat-icon>play_arrow</mat-icon></button>
+           </div>
 
         </div>
         <div class="right">

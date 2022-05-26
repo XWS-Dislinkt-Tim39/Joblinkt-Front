@@ -6,13 +6,13 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    gap:20px;
     flex-direction: column;
 }
 
 .content {
     width: 70%;
     height: 100vh;
-    padding: 20px;
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -21,8 +21,11 @@
     width: 70%;
     margin-top: 100px;
     background-color: base.$background-color;
-    padding:20px;
     border-radius: base.$border-radius;
+    
+}
+.about{
+    padding: 20px;
 }
 
 .left {
@@ -31,7 +34,7 @@
     align-items: center;
     flex-direction: column;
     gap: 10px;
-    flex-grow: 1;
+    width: 20%;
 }
 
 .filters-title {
@@ -42,7 +45,7 @@
 
 .right {
     display: flex;
-    flex-grow: 5;
+    width: 80%;
     display: flex;
     flex-direction: column;
     gap:20px;
@@ -50,7 +53,7 @@
 }
 
 .mat-form-field {
-    width: 90%;
+    width: 100%;
 }
 .search{
     display: flex;
@@ -100,6 +103,7 @@
     color: base.$light-grey-letters;
 }
 
+
 .mat-h4 {
     font-size: 16px;
     color: base.$light-grey-letters;
@@ -110,20 +114,54 @@
     font-size: 16px;
     color: base.$dark-grey;
 }
-.industry{
-    font-size: 18px;
+.industry {
     font-weight: 500;
-    color:base.$secondary-color;
-    margin: 0;
+    margin-top: -20px;
+    font-size: 16px;
+    color: base.$secondary-color;
 }
 .primary-button {
     margin: 0;
-    font-size: 18px;
+    font-size: 16px;
     width: 180px;
     margin-top:5px;
     @extend %primary-button
 }
 .primary-button:hover {
     @extend %primary-button-hover
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.menu-button{
+    padding: 20px;
+    background-color: base.$primary-color;
+    font-size: 16px;
+    color: white;
+    border: 0px solid white;
+    border-bottom: 1px solid base.$dark-grey;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap:10px;
+}
+.menu-button .mat-icon{
+    visibility: hidden;
+}
+.menu-button:hover{
+    cursor: pointer;
+}
+.menu-button:hover .mat-icon{
+    visibility: visible;
+}
+.first{
+   border-radius: 10px 10px 0 0;
+}
+.last{
+    border-radius: 0 0 10px 10px;
+    border: 0px solid white;
 }
 
