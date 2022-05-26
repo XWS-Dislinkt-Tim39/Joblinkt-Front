@@ -8,11 +8,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { RouterModule } from '@angular/router';
+import { CompanyAboutComponent } from './company-about/company-about.component';
 
 
 @NgModule({
   declarations: [
-    SearchCompanyComponent
+    SearchCompanyComponent,
+    CompanyAboutComponent
   ],
   imports: [
     CommonModule,
