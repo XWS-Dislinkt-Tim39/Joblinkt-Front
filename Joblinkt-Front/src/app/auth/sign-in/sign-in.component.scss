@@ -7,6 +7,10 @@
     display: flex;
     flex-direction: row;
 }
+h2{
+    font-size: 30px;
+    padding: 20px;
+}
 
 .content {
     background-color: white;
@@ -19,9 +23,38 @@
     align-items: center;
     flex-direction: column;
 }
+.sign-in,.sign-up{
+    position: absolute;
+    top:200px;
+    right: -3.5px;
+    width: 200px;
+    background-color: transparent;
+    border-radius: 20px 0px 0px 20px;
+    padding: 20px;;
+    border: 3.5px solid white;
+    color:white;
+    font-size: 20px;
+    font-weight: 550;
+}
+.sign-in{
+    background-color: white;
+    color:base.$secondary-color
+}
+.sign-up{
+    top:280px;
+}
+.sign-in:hover,.sign-up:hover{
+   cursor: pointer;
+    background-color: white;
+    border-radius: 20px 0px 0px 20px;
+    color:base.$secondary-color
+   
+}
+
 .left{
     width: 40%;;
     background-image: base.$primary-gradient;
+    position: relative;
 }
 .right{
     width: 60%;
@@ -34,7 +67,7 @@
 
 .logo {
    color:base.$primary-color;
-   font-size: 50px;
+   font-size: 60px;
    padding: 20px;;
 }
 
@@ -52,6 +85,8 @@ form {
 
 .primary-button {
     margin-top: 30px;
+    font-size: 20px;
+    width: 200px;
     @extend %primary-button
 }
 
