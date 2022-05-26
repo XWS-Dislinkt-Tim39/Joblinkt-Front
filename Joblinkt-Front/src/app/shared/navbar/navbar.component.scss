@@ -1,0 +1,70 @@
+@use '../../../base-style'as base;
+
+.navbar {
+  overflow: hidden;
+  background-color: base.$primary-color;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  z-index: 10;
+  padding: 5px;
+  justify-content: space-between;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 22px;
+  text-decoration: none;
+}
+.navbar a:hover {
+    color:base.$dark-grey
+  }
+
+#logo {
+  font-size: 30px;
+  color: white;
+}
+
+#logo:hover {
+  color: base.$dark-grey
+}
+
+.search{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.search:hover{
+  cursor: pointer;
+}
+
+
+#profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  margin-right: 20px;
+  background-color: transparent;
+  border: 0;
+}
+
+#profile:hover {
+  color: base.$dark-grey;
+  cursor: pointer;
+}
+
+button.mat-menu-item {
+  font-size: 18px;
+}

@@ -1,0 +1,18 @@
+<div class="navbar">
+    <a href="#home" id="logo">Logo</a>
+    <div class="search">
+     
+    <a [routerLink]="['/dashboard-search-profiles']">
+  Comanies
+    </a>
+  </div>
+    <button id="profile" mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>person</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>View profile</button>
+      <button mat-menu-item>My Companies</button>
+      <button mat-menu-item [routerLink]="['']">Log Out</button>
+    </mat-menu>
+  </div>
+  
