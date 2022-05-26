@@ -4,6 +4,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 
@@ -16,6 +18,8 @@ import { MatIconModule } from '@angular/material/icon';
     AppRoutingModule,
     MatMenuModule,
     MatIconModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
   ],
   exports: [
     NavbarComponent
