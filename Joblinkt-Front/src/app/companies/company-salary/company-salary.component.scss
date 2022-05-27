@@ -65,7 +65,6 @@
     flex-direction: column;
     gap:20px;
     width: 100%;
-    align-items: center;
 }
 .comment{
     background-color: base.$background-color;
@@ -185,7 +184,7 @@
 .menu-button:hover .mat-icon{
     visibility: visible;
 }
-.add-comment{
+.add-salary{
     padding: 12px 15px;
     background-image: base.$primary-gradient;
     font-size: 16px;
@@ -195,10 +194,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 170px;
+    width: 150px;
     border-radius:15px;
 }
-.add-comment:hover{
+.add-salary:hover{
     @extend %primary-button-hover
 }
 .first{
@@ -213,5 +212,25 @@
     color:base.$dark-grey;
     font-weight: 500;
     padding:10px 0px;
+}
+.mat-table
+{
+  background-color:transparent!important;  
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 15px;
+}
+table tr:last-child td /*To remove the last border*/
+{
+  border-bottom:0 solid
+}
+.mat-header-cell{
+    color:base.$secondary-color;
+    font-size: 16px;
+}
+tr.mat-row{
+    background-color: base.$background-color;
 }
 

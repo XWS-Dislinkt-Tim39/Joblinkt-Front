@@ -14,6 +14,8 @@ import { CompanyInterviewComponent } from './company-interview/company-interview
 import { AddCommentComponent } from './add-comment/add-comment.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AddInterviewComponent } from './add-interview/add-interview.component';
+import { CompanySalaryComponent } from './company-salary/company-salary.component';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import { AddInterviewComponent } from './add-interview/add-interview.component';
     CompanyCommentsComponent,
     CompanyInterviewComponent,
     AddCommentComponent,
-    AddInterviewComponent
+    AddInterviewComponent,
+    CompanySalaryComponent
   ],
   entryComponents: [AddCommentComponent,AddInterviewComponent ],
   imports: [
@@ -36,6 +39,7 @@ import { AddInterviewComponent } from './add-interview/add-interview.component';
     MatIconModule,
     RouterModule,
     MatDialogModule,
+    MatTableModule
   ],
   exports: [
     CompanyCommentsComponent,

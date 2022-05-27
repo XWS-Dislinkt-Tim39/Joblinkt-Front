@@ -1,0 +1,75 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="header">
+        <div class="about">
+            <div class="head">
+                <div class="image">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8FuEJbKwDdaz1h387130xmYkAIQbZpahhbQ&usqp=CAU">
+                </div>
+                <div class="info">
+                    <div class="mat-h2">IT Company</div>
+                    <div class="mat-h3">Novi Sad, Srbija</div>
+                    <div class="industry">Software outsourcing</div>
+
+                </div>
+                <div class="mat-h2">4.7</div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="content">
+        <div class="left">
+            <div class="menu">
+                <button class="menu-button first" [routerLink]="['/company-about']" routerLinkActive="active">About
+                    Comapany<mat-icon>play_arrow</mat-icon></button>
+                <button class="menu-button" [routerLink]="['/company-comments']" routerLinkActive="active">Comments
+                    <mat-icon>play_arrow</mat-icon>
+                </button>
+                <button class="menu-button" [routerLink]="['/company-interview']" routerLinkActive="active"> Interviews
+                    <mat-icon>play_arrow</mat-icon>
+                </button>
+                <button class="menu-button last" [routerLink]="['/company-salary']" routerLinkActive="active">Salary
+                    <mat-icon>play_arrow</mat-icon>
+                </button>
+            </div>
+
+        </div>
+        <div class="right">
+            <button class="add-salary"  ><mat-icon>add</mat-icon>Add Salary</button>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="position">
+                  <th mat-header-cell *matHeaderCellDef>Job position</th>
+                  <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+              
+                <!-- Weight Column -->
+                <ng-container matColumnDef="level">
+                  <th mat-header-cell *matHeaderCellDef>Level </th>
+                  <td mat-cell *matCellDef="let element"> {{element.level}} </td>
+                </ng-container>
+              
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="average">
+                  <th mat-header-cell *matHeaderCellDef> Avg.Salary </th>
+                  <td mat-cell *matCellDef="let element"> {{element.average}} </td>
+                </ng-container>
+                <ng-container matColumnDef="min">
+                    <th mat-header-cell *matHeaderCellDef> Min </th>
+                    <td mat-cell *matCellDef="let element"> {{element.min}} </td>
+                  </ng-container>\
+                  <ng-container matColumnDef="max">
+                    <th mat-header-cell *matHeaderCellDef> Max </th>
+                    <td mat-cell *matCellDef="let element"> {{element.max}} </td>
+                  </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+
+        </div>
+    </div>
+</div>
