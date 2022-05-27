@@ -13,6 +13,7 @@ import { CompanyCommentsComponent } from './company-comments/company-comments.co
 import { CompanyInterviewComponent } from './company-interview/company-interview.component';
 import { AddCommentComponent } from './add-comment/add-comment.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { AddInterviewComponent } from './add-interview/add-interview.component';
 
 
 @NgModule({
@@ -21,9 +22,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     CompanyAboutComponent,
     CompanyCommentsComponent,
     CompanyInterviewComponent,
-    AddCommentComponent
+    AddCommentComponent,
+    AddInterviewComponent
   ],
-  entryComponents: [AddCommentComponent, ],
+  entryComponents: [AddCommentComponent,AddInterviewComponent ],
   imports: [
     CommonModule,
     SharedModule,

@@ -39,7 +39,7 @@
         <div class="right">
 
             <div class="comments">
-                <button class="add-interview" [routerLink]="['/dashboard']" >  <mat-icon>add</mat-icon>Add Interview Process </button>
+                <button class="add-interview" (click)="openAddDialog($event)" ><mat-icon>add</mat-icon>Add Interview Process </button>
                 <div class="comment">
                     <div class="commnet-header">
                         <div>Junior Software Developer</div>
