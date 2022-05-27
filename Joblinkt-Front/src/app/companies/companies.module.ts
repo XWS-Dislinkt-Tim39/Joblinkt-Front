@@ -9,12 +9,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { RouterModule } from '@angular/router';
 import { CompanyAboutComponent } from './company-about/company-about.component';
+import { CompanyCommentsComponent } from './company-comments/company-comments.component';
 
 
 @NgModule({
   declarations: [
     SearchCompanyComponent,
-    CompanyAboutComponent
+    CompanyAboutComponent,
+    CompanyCommentsComponent
   ],
   imports: [
     CommonModule,
