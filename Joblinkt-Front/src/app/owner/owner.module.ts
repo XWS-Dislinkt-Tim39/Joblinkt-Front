@@ -12,13 +12,15 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { AddCompanyComponent } from './add-company/add-company.component';
+import { NonRegisteredComponent } from './non-registered/non-registered.component';
 
 
 
 @NgModule({
   declarations: [
     MyCompaniesComponent,
-    AddCompanyComponent
+    AddCompanyComponent,
+    NonRegisteredComponent
   ],
   imports: [
     CommonModule,

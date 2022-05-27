@@ -9,6 +9,7 @@ import { CompanyJobsComponent } from './companies/company-jobs/company-jobs.comp
 import { CompanySalaryComponent } from './companies/company-salary/company-salary.component';
 import { SearchCompanyComponent } from './companies/search-company/search-company.component';
 import { MyCompaniesComponent } from './owner/my-companies/my-companies.component';
+import { NonRegisteredComponent } from './owner/non-registered/non-registered.component';
 
 const routes: Routes = [
   {
@@ -50,6 +51,10 @@ const routes: Routes = [
   {
     path: 'my-companies',
     component: MyCompaniesComponent
+  },
+  {
+    path: 'non-registered',
+    component: NonRegisteredComponent
   },
 ];
 
