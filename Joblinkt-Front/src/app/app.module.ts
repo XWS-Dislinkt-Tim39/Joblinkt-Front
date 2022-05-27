@@ -8,6 +8,7 @@ import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { CompaniesModule } from './companies/companies.module';
 import { OwnerModule } from './owner/owner.module';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { OwnerModule } from './owner/owner.module';
     AuthModule,
     SharedModule,
     CompaniesModule,
-    OwnerModule
+    OwnerModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]

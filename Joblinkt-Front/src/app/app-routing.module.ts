@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CompanyRequestsComponent } from './admin/company-requests/company-requests.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { CompanyAboutComponent } from './companies/company-about/company-about.component';
@@ -55,6 +56,10 @@ const routes: Routes = [
   {
     path: 'non-registered',
     component: NonRegisteredComponent
+  },
+  {
+    path: 'admin-requests',
+    component: CompanyRequestsComponent
   },
 ];
 
