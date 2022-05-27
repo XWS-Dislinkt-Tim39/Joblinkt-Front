@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="mat-h2" mat-dialog-title>Add comment</div>
+    <div mat-dialog-content>
+
+        <form [formGroup]="form">
+            <mat-form-field appearance="outline">
+                <mat-label>Position*</mat-label>
+                <input formControlName="text" matInput placeholder="Enter your job position">
+            </mat-form-field>
+            <div class="position">
+                <mat-form-field appearance="outline">
+                    <mat-label>Choose position level</mat-label>
+                    <mat-select>
+                        <mat-option>
+                            Junior
+                        </mat-option>
+                        <mat-option>
+                            Medior
+                        </mat-option>
+                        <mat-option>
+                            Senior
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Grade*</mat-label>
+                    <input formControlName="number" type="number" max="5" min="1" matInput placeholder="Enter grade">
+                </mat-form-field>
+            </div>
+            <mat-form-field appearance="outline">
+                <mat-label>Positive*</mat-label>
+                <textarea formControlName="text" matInput placeholder="Enter positive thoughts"></textarea>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Negative*</mat-label>
+                <textarea formControlName="text" matInput placeholder="Enter negative thoughts"></textarea>
+            </mat-form-field>
+
+        </form>
+
+    </div>
+    <div mat-dialog-actions class="dialog-actions">
+        <button class="yes-button" mat-raised-button mat-dialog-close>Add</button>
+        <button class="cancel-button" mat-raised-button mat-dialog-close raised>Close</button>
+    </div>
+</div>

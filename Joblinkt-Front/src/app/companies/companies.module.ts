@@ -11,6 +11,9 @@ import { RouterModule } from '@angular/router';
 import { CompanyAboutComponent } from './company-about/company-about.component';
 import { CompanyCommentsComponent } from './company-comments/company-comments.component';
 import { CompanyInterviewComponent } from './company-interview/company-interview.component';
+import { AddCommentComponent } from './add-comment/add-comment.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AddInterviewComponent } from './add-interview/add-interview.component';
 
 
 @NgModule({
@@ -18,8 +21,11 @@ import { CompanyInterviewComponent } from './company-interview/company-interview
     SearchCompanyComponent,
     CompanyAboutComponent,
     CompanyCommentsComponent,
-    CompanyInterviewComponent
+    CompanyInterviewComponent,
+    AddCommentComponent,
+    AddInterviewComponent
   ],
+  entryComponents: [AddCommentComponent,AddInterviewComponent ],
   imports: [
     CommonModule,
     SharedModule,
@@ -29,6 +35,10 @@ import { CompanyInterviewComponent } from './company-interview/company-interview
     MatFormFieldModule,
     MatIconModule,
     RouterModule,
+    MatDialogModule,
+  ],
+  exports: [
+    CompanyCommentsComponent,
   ]
 })
 export class CompaniesModule { }
