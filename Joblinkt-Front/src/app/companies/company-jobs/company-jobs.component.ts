@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { AddJobOfferComponent } from '../add-job-offer/add-job-offer.component';
 import { JobViewComponent } from '../job-view/job-view.component';
 
 @Component({
@@ -13,8 +14,14 @@ export class CompanyJobsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  openAddDialog(event: { stopPropagation: () => void; }) {
+  openViewDialog(event: { stopPropagation: () => void; }) {
     this.dilogRef = this.dialog.open(JobViewComponent, {
+      data: {
+      }
+    });
+  }
+  openAddDialog(event: { stopPropagation: () => void; }) {
+    this.dilogRef = this.dialog.open(AddJobOfferComponent, {
       data: {
       }
     });

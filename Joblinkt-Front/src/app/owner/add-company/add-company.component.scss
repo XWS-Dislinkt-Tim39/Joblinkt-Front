@@ -1,0 +1,61 @@
+@use '../../../base-style' as base;
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:20px;
+}
+
+.mat-dilaog-content {
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.position {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+.dialog-actions{
+    display: flex;
+    gap:20px;
+}
+
+.yes-button{
+    background-color: base.$secondary-color;
+    padding:12px 15px;
+    border:0px solid white;
+    border-radius: 15px;
+    color:white;
+    font-size: 16px;
+    width: 150px;
+}
+.yes-button:hover{
+    @extend %primary-button-hover
+}
+.cancel-button{
+    background-color:base.$background-color;
+    padding:12px 15px;
+    border:0px solid white;
+    border-radius: 15px;
+    color:base.$dark-grey;
+    font-size: 16px;
+    width: 100px;
+}
+.cancel-button:hover{
+    @extend %primary-button-hover
+}

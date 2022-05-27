@@ -40,7 +40,7 @@
         <div class="right">
 
             <div class="jobs">
-                <button class="add-job">
+                <button class="add-job"  (click)="openAddDialog($event)">
                     <mat-icon>add</mat-icon>Add Job Offer</button>
                 <div class="job">
                     <div class="job-header">
@@ -57,7 +57,7 @@
                             et dolore magna aliqua
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore</div>
-                        <button class="edit-job" (click)="openAddDialog($event)">View more..</button>
+                        <button class="edit-job" (click)="openViewDialog($event)">View more..</button>
                     </div>
                 </div>
                 <div class="job">

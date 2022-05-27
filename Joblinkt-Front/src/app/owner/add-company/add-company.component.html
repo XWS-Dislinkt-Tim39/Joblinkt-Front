@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="mat-h2" mat-dialog-title>Register new company</div>
+    <div mat-dialog-content>
+
+        <form [formGroup]="form">
+            <mat-form-field appearance="outline">
+                <mat-label>Name*</mat-label>
+                <input formControlName="name" matInput placeholder="Enter company name">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Industry*</mat-label>
+                <input formControlName="industry" matInput placeholder="Enter industry ">
+            </mat-form-field>
+            <div class="position">
+                <mat-form-field appearance="outline">
+                    <mat-label>Address*</mat-label>
+                    <input formControlName="address" matInput placeholder="Enter address">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>City*</mat-label>
+                    <input formControlName="city"  matInput placeholder="Enter city">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Country*</mat-label>
+                    <input formControlName="country"  matInput placeholder="Enter country">
+                </mat-form-field>
+            </div>
+            <div class="position">
+            <mat-form-field appearance="outline">
+                <mat-label>Phone number*</mat-label>
+                <input formControlName="phone" matInput placeholder="Enter phone number">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Email*</mat-label>
+                <input formControlName="email" matInput placeholder="Enter email">
+            </mat-form-field>
+        </div>
+        <mat-form-field appearance="outline">
+            <mat-label>Description and culture*</mat-label>
+            <textarea formControlName="description" matInput placeholder="Enter more about company"></textarea>
+        </mat-form-field>
+
+        </form>
+
+    </div>
+    <div mat-dialog-actions class="dialog-actions">
+        <button class="yes-button" mat-raised-button mat-dialog-close>Send request</button>
+        <button class="cancel-button" mat-raised-button mat-dialog-close raised>Close</button>
+    </div>
+</div>
