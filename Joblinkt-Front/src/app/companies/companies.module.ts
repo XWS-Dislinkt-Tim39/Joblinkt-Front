@@ -19,6 +19,7 @@ import {MatTableModule} from '@angular/material/table';
 import { AddSalaryComponent } from './add-salary/add-salary.component';
 import { EditCompanyInfoComponent } from './edit-company-info/edit-company-info.component';
 import { CompanySidebarComponent } from './company-sidebar/company-sidebar.component';
+import { CompanyJobsComponent } from './company-jobs/company-jobs.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { CompanySidebarComponent } from './company-sidebar/company-sidebar.compo
     CompanySalaryComponent,
     AddSalaryComponent,
     EditCompanyInfoComponent,
-    CompanySidebarComponent
+    CompanySidebarComponent,
+    CompanyJobsComponent
   ],
   entryComponents: [AddCommentComponent,AddInterviewComponent,AddSalaryComponent,EditCompanyInfoComponent ],
   imports: [
