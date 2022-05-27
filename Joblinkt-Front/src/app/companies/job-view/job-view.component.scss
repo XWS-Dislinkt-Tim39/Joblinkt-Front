@@ -1,0 +1,117 @@
+@use '../../../base-style' as base;
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:20px;
+}
+
+.mat-dilaog-content {
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.position {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+.dialog-actions{
+    display: flex;
+    gap:20px;
+}
+
+.yes-button{
+    background-color: base.$secondary-color;
+    padding:12px 15px;
+    border:0px solid white;
+    border-radius: 15px;
+    color:white;
+    font-size: 16px;
+    width: 100px;
+}
+.yes-button:hover{
+    @extend %primary-button-hover
+}
+.cancel-button{
+    background-color:base.$background-color;
+    padding:12px 15px;
+    border:0px solid white;
+    border-radius: 15px;
+    color:base.$dark-grey;
+    font-size: 16px;
+    width: 100px;
+}
+.cancel-button:hover{
+    @extend %primary-button-hover
+}
+.card {
+    padding: 30px;
+   display: flex;
+   flex-direction: column;
+}
+
+.card-image {
+    grid-column: 1;
+}
+
+.card-image img {
+    border-radius: 50%;
+    width: 100px;
+    width: 100px;
+}
+.about-info{
+    display: flex;
+    flex-direction: row;
+   gap:20px;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+}
+.mat-grid-list{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mat-grid-tile .mat-figure {
+    justify-content: flex-start !important ;
+    align-items: flex-start !important;
+ }
+.interest {
+    display: flex;
+    position: absolute;
+    left: 0px;
+    color: base.$dark-grey;
+    gap: 5px;
+}
+.interest .mat-icon {
+    color: base.$primary-color
+}
+.subtitle {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.job-subtitle {
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top:20px;
+}

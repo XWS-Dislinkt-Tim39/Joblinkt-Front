@@ -20,6 +20,9 @@ import { AddSalaryComponent } from './add-salary/add-salary.component';
 import { EditCompanyInfoComponent } from './edit-company-info/edit-company-info.component';
 import { CompanySidebarComponent } from './company-sidebar/company-sidebar.component';
 import { CompanyJobsComponent } from './company-jobs/company-jobs.component';
+import { JobViewComponent } from './job-view/job-view.component';
+
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -34,7 +37,8 @@ import { CompanyJobsComponent } from './company-jobs/company-jobs.component';
     AddSalaryComponent,
     EditCompanyInfoComponent,
     CompanySidebarComponent,
-    CompanyJobsComponent
+    CompanyJobsComponent,
+    JobViewComponent
   ],
   entryComponents: [AddCommentComponent,AddInterviewComponent,AddSalaryComponent,EditCompanyInfoComponent ],
   imports: [
@@ -47,7 +51,8 @@ import { CompanyJobsComponent } from './company-jobs/company-jobs.component';
     MatIconModule,
     RouterModule,
     MatDialogModule,
-    MatTableModule
+    MatTableModule,
+    MatGridListModule,
   ],
   exports: [
     CompanyCommentsComponent,
