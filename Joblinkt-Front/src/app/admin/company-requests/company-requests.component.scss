@@ -1,0 +1,186 @@
+@use '../../../base-style'as base;
+
+.navbar {
+  overflow: hidden;
+  background-color: base.$primary-color;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  z-index: 10;
+  padding: 15px;
+  justify-content: space-between;
+}
+#logo{
+    font-weight:600 ;
+    color:base.$dark-grey
+}
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+.navbar a:hover {
+    color:base.$dark-grey
+  }
+.left{
+    display: flex;
+    flex-direction: row;
+    gap:70px;
+    justify-content: center;
+    align-items:center;
+}
+
+#profile {
+  display: flex;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background-color: transparent;
+  border: 0;
+  margin-right: 40px;
+}
+
+#profile:hover {
+  color: base.$dark-grey;
+  cursor: pointer;
+}
+
+button.mat-menu-item {
+  font-size: 18px;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    min-height: 100vh;
+    gap:20px;
+    flex-direction: column;
+}
+
+.content {
+    margin-top: 100px;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 30px;
+}
+.header{
+    width: 70%;
+    margin-top: 100px;
+    background-color: base.$background-color;
+    border-radius: base.$border-radius;
+    
+}
+.about{
+    padding: 20px;
+}
+
+.primary-button {
+    margin: 0;
+    font-size: 16px;
+    width: 180px;
+    margin-top:5px;
+    @extend %primary-button
+}
+.primary-button:hover {
+    @extend %primary-button-hover
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.menu-button{
+    padding: 20px;
+    background-color: base.$primary-color;
+    font-size: 16px;
+    color: white;
+    border: 0px solid white;
+    border-bottom: 1px solid base.$dark-grey;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap:10px;
+}
+.menu-button .mat-icon{
+    visibility: hidden;
+}
+.menu-button:hover{
+    cursor: pointer;
+}
+.menu-button.active{
+  font-weight: 600;
+}
+.menu-button.active .mat-icon{
+    visibility: visible;
+}
+.menu-button:hover .mat-icon{
+    visibility: visible;
+}
+.first{
+   border-radius: 15px 15px 0 0;
+}
+.last{
+    border-radius: 0 0 15px 15px;
+    border: 0px solid white;
+}
+.accept{
+    padding: 12px 15px;
+    background-color: base.$primary-color;
+    font-size: 16px;
+    color: white;
+    border: 0px solid white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius:15px;
+    margin: 5px;
+}
+.accept:hover{
+    @extend %primary-button-hover
+}
+.reject{
+    padding: 12px 15px;
+    background-color: base.$danger;
+    font-size: 16px;
+    color: white;
+    border: 0px solid white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius:15px;
+}
+.reject:hover{
+    @extend %primary-button-hover
+}
+
+
+.mat-table
+{
+  background-color:transparent!important;  
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 15px;
+}
+table tr:last-child td /*To remove the last border*/
+{
+  border-bottom:0 solid
+}
+.mat-header-cell{
+    color:base.$secondary-color;
+    font-size: 16px;
+}
+tr.mat-row{
+    background-color: base.$background-color;
+}
+
