@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddCommentComponent } from 'src/app/companies/add-comment/add-comment.component';
 import { EditCompanyInfoComponent } from 'src/app/companies/edit-company-info/edit-company-info.component';
+import { AddCompanyComponent } from '../add-company/add-company.component';
 
 @Component({
   selector: 'app-my-companies',
@@ -15,7 +16,7 @@ export class MyCompaniesComponent implements OnInit {
   ngOnInit(): void {
   }
   openAddDialog(event: { stopPropagation: () => void; }) {
-    this.dilogRef = this.dialog.open(EditCompanyInfoComponent, {
+    this.dilogRef = this.dialog.open(AddCompanyComponent, {
       data: {
       }
     });

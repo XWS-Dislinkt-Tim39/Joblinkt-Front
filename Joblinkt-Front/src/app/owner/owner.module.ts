@@ -11,12 +11,14 @@ import { RouterModule } from '@angular/router';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { AddCompanyComponent } from './add-company/add-company.component';
 
 
 
 @NgModule({
   declarations: [
-    MyCompaniesComponent
+    MyCompaniesComponent,
+    AddCompanyComponent
   ],
   imports: [
     CommonModule,
