@@ -16,6 +16,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AddInterviewComponent } from './add-interview/add-interview.component';
 import { CompanySalaryComponent } from './company-salary/company-salary.component';
 import {MatTableModule} from '@angular/material/table';
+import { AddSalaryComponent } from './add-salary/add-salary.component';
 
 
 @NgModule({
@@ -26,9 +27,10 @@ import {MatTableModule} from '@angular/material/table';
     CompanyInterviewComponent,
     AddCommentComponent,
     AddInterviewComponent,
-    CompanySalaryComponent
+    CompanySalaryComponent,
+    AddSalaryComponent
   ],
-  entryComponents: [AddCommentComponent,AddInterviewComponent ],
+  entryComponents: [AddCommentComponent,AddInterviewComponent,AddSalaryComponent ],
   imports: [
     CommonModule,
     SharedModule,

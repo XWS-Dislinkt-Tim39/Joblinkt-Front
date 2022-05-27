@@ -37,7 +37,7 @@
 
         </div>
         <div class="right">
-            <button class="add-salary"  ><mat-icon>add</mat-icon>Add Salary</button>
+            <button class="add-salary"  (click)="openAddDialog($event)" ><mat-icon>add</mat-icon>Add Salary</button>
             <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
                 <!-- Name Column -->

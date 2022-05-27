@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AddSalaryComponent } from '../add-salary/add-salary.component';
 
 
 export interface PeriodicElement {
@@ -22,9 +24,16 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class CompanySalaryComponent implements OnInit {
   displayedColumns: string[] = ['position', 'level', 'average', 'min','max'];
   dataSource = ELEMENT_DATA;
-  constructor() { }
+  dilogRef: any;
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+  openAddDialog(event: { stopPropagation: () => void; }) {
+    this.dilogRef = this.dialog.open(AddSalaryComponent, {
+      data: {
+      }
+    });
   }
 
 }
