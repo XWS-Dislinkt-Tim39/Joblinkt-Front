@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AddCommentComponent } from '../add-comment/add-comment.component';
 
 @Component({
   selector: 'app-company-comments',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./company-comments.component.scss']
 })
 export class CompanyCommentsComponent implements OnInit {
-
-  constructor() { }
+  dilogRef: any;
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+  openAddDialog(event: { stopPropagation: () => void; }) {
+    this.dilogRef = this.dialog.open(AddCommentComponent, {
+      data: {
+      }
+    });
   }
 
 }

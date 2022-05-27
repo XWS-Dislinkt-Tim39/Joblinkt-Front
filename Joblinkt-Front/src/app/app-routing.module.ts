@@ -9,6 +9,10 @@ import { SearchCompanyComponent } from './companies/search-company/search-compan
 
 const routes: Routes = [
   {
+    path: '',
+    component: SignInComponent
+  },
+  {
     path: 'sign-in',
     component: SignInComponent
   },
