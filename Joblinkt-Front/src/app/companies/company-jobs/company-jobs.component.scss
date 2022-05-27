@@ -60,19 +60,40 @@
     justify-content: center;
     width: 100%;
 }
-.companies{
+.jobs{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap:20px;
     width: 100%;
-    align-items: center;
 }
-.company{
+.job{
     background-color: base.$background-color;
     padding:20px;
     border-radius: base.$border-radius;
 }
-
+.job-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 18px;
+    color:base.$secondary-color;
+    font-weight: 500;
+    border-bottom: 1px solid base.$light-grey-letters;
+    padding-bottom: 10px;
+}
+.grade{
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: 500;
+    align-items: flex-end;
+}
+.date{
+    font-size: 16px;
+    font-weight: 400;
+    color:base.$light-grey-letters
+}
 .head {
     display: grid;
     grid-template-columns: 1fr 10fr 1fr;
@@ -164,14 +185,7 @@
 .menu-button:hover .mat-icon{
     visibility: visible;
 }
-.first{
-   border-radius: 15px 15px 0 0;
-}
-.last{
-    border-radius: 0 0 15px 15px;
-    border: 0px solid white;
-}
-.edit-button{
+.add-job,.edit-job{
     padding: 12px 15px;
     background-image: base.$primary-gradient;
     font-size: 16px;
@@ -181,10 +195,28 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 200px;
+    width: 160px;
     border-radius:15px;
 }
-.edit-button:hover{
+.edit-job{
+    margin-top: 5px;
+    justify-content: center;
+
+}
+.add-job:hover,.edit-job:hover{
     @extend %primary-button-hover
+}
+.first{
+   border-radius: 15px 15px 0 0;
+}
+.last{
+    border-radius: 0 0 15px 15px;
+    border: 0px solid white;
+}
+.reaction{
+    font-size: 18px;
+    color:base.$dark-grey;
+    font-weight: 500;
+    padding:10px 0px;
 }
 

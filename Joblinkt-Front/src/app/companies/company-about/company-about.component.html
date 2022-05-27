@@ -25,13 +25,15 @@
             <button class="menu-button first"  [routerLink]="['/company-about']" routerLinkActive="active">About Comapany<mat-icon>play_arrow</mat-icon></button>
             <button class="menu-button" [routerLink]="['/company-comments']" routerLinkActive="active">Comments<mat-icon>play_arrow</mat-icon></button>
             <button class="menu-button" [routerLink]="['/company-interview']" routerLinkActive="active"> Interviews<mat-icon>play_arrow</mat-icon></button>
-            <button class="menu-button last" [routerLink]="['/company-salary']" routerLinkActive="active">Salary<mat-icon>play_arrow</mat-icon></button>
+            <button class="menu-button" [routerLink]="['/company-salary']" routerLinkActive="active">Salary<mat-icon>play_arrow</mat-icon></button>
+            <button class="menu-button last" [routerLink]="['/company-jobs']" routerLinkActive="active">Jobs<mat-icon>play_arrow</mat-icon></button>
            </div>
 
         </div>
         <div class="right">
 
             <div class="companies">
+                <button class="edit-button"  (click)="openAddDialog($event)"><mat-icon>edit</mat-icon>Edit company info</button>
                 <div class="company">
                     <div class="body mat-body-1">
                         <div> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt

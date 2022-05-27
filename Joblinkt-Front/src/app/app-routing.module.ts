@@ -5,6 +5,7 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { CompanyAboutComponent } from './companies/company-about/company-about.component';
 import { CompanyCommentsComponent } from './companies/company-comments/company-comments.component';
 import { CompanyInterviewComponent } from './companies/company-interview/company-interview.component';
+import { CompanyJobsComponent } from './companies/company-jobs/company-jobs.component';
 import { CompanySalaryComponent } from './companies/company-salary/company-salary.component';
 import { SearchCompanyComponent } from './companies/search-company/search-company.component';
 
@@ -40,6 +41,10 @@ const routes: Routes = [
   {
     path: 'company-salary',
     component: CompanySalaryComponent
+  },
+  {
+    path: 'company-jobs',
+    component: CompanyJobsComponent
   },
 ];
 

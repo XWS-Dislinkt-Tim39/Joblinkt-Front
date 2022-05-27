@@ -30,68 +30,56 @@
                 <button class="menu-button" [routerLink]="['/company-interview']" routerLinkActive="active"> Interviews
                     <mat-icon>play_arrow</mat-icon>
                 </button>
-                <button class="menu-button" [routerLink]="['/company-salary']" routerLinkActive="active">Salary<mat-icon>play_arrow</mat-icon></button>
-                <button class="menu-button last" [routerLink]="['/company-jobs']" routerLinkActive="active">Jobs<mat-icon>play_arrow</mat-icon></button>
+                <button class="menu-button" [routerLink]="['/company-salary']" routerLinkActive="active">Salary
+                    <mat-icon>play_arrow</mat-icon></button>
+                <button class="menu-button last" [routerLink]="['/company-jobs']" routerLinkActive="active">Jobs
+                    <mat-icon>play_arrow</mat-icon></button>
             </div>
 
         </div>
         <div class="right">
 
-            <div class="comments">
-                <button class="add-comment"  (click)="openAddDialog($event)" >  <mat-icon>add</mat-icon>Add Comment </button>
-                <div class="comment">
-                    <div class="commnet-header">
+            <div class="jobs">
+                <button class="add-job">
+                    <mat-icon>add</mat-icon>Add Job Offer</button>
+                <div class="job">
+                    <div class="job-header">
                         <div>Junior Software Developer</div>
                         <div class="grade">
                             <div class="date">15.03.2022.</div>
-                            <div>4.7</div>
                         </div>
                     </div>
-                    <div class="comment-content">
-                        <div class="reaction">Positive </div>
+                    <div class="job-content">
+                        <div class="reaction">Job Description</div>
                         <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt
                             ut labore
                             et dolore magna aliqua
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore</div>
-                        <div class="reaction">Negative </div>
-                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt
-                            ut labore
-                            et dolore magna aliqua
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore</div>
+                        <button class="edit-job" (click)="openAddDialog($event)">View more..</button>
                     </div>
                 </div>
-            </div>
-            <div class="comments">
-                <div class="comment">
-                    <div class="commnet-header">
+                <div class="job">
+                    <div class="job-header">
                         <div>Senior Software Developer</div>
                         <div class="grade">
                             <div class="date">15.03.2022.</div>
-                            <div>4.7</div>
                         </div>
                     </div>
-                    <div class="comment-content">
-                        <div class="reaction">Positive </div>
+                    <div class="job-content">
+                        <div class="reaction">Job Description</div>
                         <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt
                             ut labore
                             et dolore magna aliqua
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore</div>
-                        <div class="reaction">Negative </div>
-                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt
-                            ut labore
-                            et dolore magna aliqua
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore</div>
+                        <button class="edit-job">View more..</button>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
