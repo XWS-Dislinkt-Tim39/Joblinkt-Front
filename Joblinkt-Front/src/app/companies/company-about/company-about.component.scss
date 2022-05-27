@@ -65,6 +65,7 @@
     flex-direction: column;
     gap:20px;
     width: 100%;
+    align-items: center;
 }
 .company{
     background-color: base.$background-color;
@@ -169,5 +170,21 @@
 .last{
     border-radius: 0 0 10px 10px;
     border: 0px solid white;
+}
+.edit-button{
+    padding: 12px 15px;
+    background-image: base.$primary-gradient;
+    font-size: 16px;
+    color: white;
+    border: 0px solid white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    border-radius:15px;
+}
+.edit-button:hover{
+    @extend %primary-button-hover
 }
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { EditCompanyInfoComponent } from '../edit-company-info/edit-company-info.component';
 
 @Component({
   selector: 'app-company-about',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./company-about.component.scss']
 })
 export class CompanyAboutComponent implements OnInit {
-
-  constructor() { }
+  dilogRef: any;
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+  openAddDialog(event: { stopPropagation: () => void; }) {
+    this.dilogRef = this.dialog.open(EditCompanyInfoComponent, {
+      data: {
+      }
+    });
   }
 
 }
