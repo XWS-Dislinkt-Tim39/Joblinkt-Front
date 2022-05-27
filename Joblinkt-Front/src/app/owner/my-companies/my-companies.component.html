@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="content">
+        <div class="left">
+           
+            <div class="menu">
+                <button class="menu-button first" [routerLink]="['/my-companies']" routerLinkActive="active">Registered<mat-icon>play_arrow</mat-icon></button>
+                <button class="menu-button last" [routerLink]="['/company-comments']" routerLinkActive="active">Non Registered
+                    <mat-icon>play_arrow</mat-icon>
+                </button>
+                 </div>
+        </div>
+        <div class="right">
+            <button class="new-company"  (click)="openAddDialog($event)" ><mat-icon>add</mat-icon>Register new company</button>
+              <div class="companies">
+                  <div class="company">
+                        <div class="head">
+                          <div class="image">
+                            <img
+                              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8FuEJbKwDdaz1h387130xmYkAIQbZpahhbQ&usqp=CAU">
+                          </div>
+                          <div class="info">
+                            <div class="mat-h2">IT Company</div>
+                            <div class="mat-h3">Novi Sad, Srbija</div>
+                          </div>
+                          <div class="mat-h2">4.7</div>
+                        </div>
+                        <div class="body mat-body-1">
+                            <div class="industry">Software outsourcing</div>
+                          <div> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna aliqua
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna aliqua
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna aliqua.</div>
+                        </div>
+                        <button class="primary-button" [routerLink]="['/company-about']">View more..</button>
+                  </div>
+                  <div class="company">
+                    <div class="head">
+                      <div class="image">
+                        <img
+                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8FuEJbKwDdaz1h387130xmYkAIQbZpahhbQ&usqp=CAU">
+                      </div>
+                      <div class="info">
+                        <div class="mat-h2">IT Company</div>
+                        <div class="mat-h3">Novi Sad, Srbija</div>
+                      </div>
+                      <div class="mat-h2">4.7</div>
+                    </div>
+                    <div class="body mat-body-1">
+                        <div class="industry">Software outsourcing</div>
+                      <div> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                        et dolore magna aliqua
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                        et dolore magna aliqua
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                        et dolore magna aliqua.</div>
+                    </div>
+                    <button class="primary-button" [routerLink]="['/dashboard']">View more..</button>
+              </div>
+              </div>
+        </div>
+    </div>
+</div>
