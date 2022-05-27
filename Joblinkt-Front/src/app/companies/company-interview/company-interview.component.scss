@@ -184,7 +184,7 @@
 .menu-button:hover .mat-icon{
     visibility: visible;
 }
-.add-comment{
+.add-interview{
     padding: 12px 15px;
     background-image: base.$primary-gradient;
     font-size: 16px;
@@ -194,10 +194,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 170px;
+    width: 230px;
     border-radius:15px;
 }
-.add-comment:hover{
+.add-interview:hover{
     @extend %primary-button-hover
 }
 .first{
