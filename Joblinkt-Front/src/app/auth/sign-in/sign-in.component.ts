@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ErrorMatcher } from 'src/app/core/error/error-matcher';
+import { UserSignIn } from 'src/app/core/models/user-sign-in.model';
+import { AuthenticationService } from 'src/app/core/services/authentication.service';
+import { JwtService } from 'src/app/core/services/jwt.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -10,8 +15,12 @@ export class SignInComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
   hidePassword = true;
+  matcher: ErrorMatcher = new ErrorMatcher();
   constructor(
     private formBuilder: FormBuilder,
+    private router: Router,
+    private authenticationService: AuthenticationService,
+    private jwtService: JwtService
   ) {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
@@ -27,7 +36,22 @@ export class SignInComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-    
+    const login: UserSignIn = { username: '', password: '' };
+    login.username = this.loginForm.value.username;
+    login.password = this.loginForm.value.password;
+    /*this.authenticationService.signUp(login).subscribe((data: any) => {
+      if(data==null){
+        alert('Username od password invalid! Try again!');
+        this.loginForm.reset();
+      }
+      else{
+        this.jwtService.saveUserDetails(data);
+        this.router.navigate(['/dashboard']);  
+      }
+    },
+      error => {
+        alert(error.error.message);
+      });*/
   }
 
 }
