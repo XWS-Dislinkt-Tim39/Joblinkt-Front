@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { CompaniesModule } from './companies/companies.module';
 import { OwnerModule } from './owner/owner.module';
 import { AdminModule } from './admin/admin.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AdminModule } from './admin/admin.module';
     SharedModule,
     CompaniesModule,
     OwnerModule,
-    AdminModule
+    AdminModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
