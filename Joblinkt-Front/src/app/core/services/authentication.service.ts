@@ -1,10 +1,11 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
-import { environment } from 'src/environments/environment';
-import { UserSignIn } from '../models/user-sign-in.model';
-import { User } from '../models/user.model';
-import { JwtService } from './jwt.service';
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs/internal/Observable";
+import { environment } from "src/environments/environment";
+import { UserSignIn } from "../models/user-sign-in.model";
+import { User } from "../models/user.model";
+import { JwtService } from "./jwt.service";
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +18,18 @@ export class AuthenticationService {
     private http: HttpClient,
     private jwtService: JwtService
   ) { }
+
+  signUp(user: UserSignIn): Observable<any> {
+    return this.http.get(`${environment.api_url}sign-up`, {
+      params: {
+        username: user.username,
+        password: user.password
+      }, headers: this.headers, responseType: 'json'
+    });
+  }
+
+  register(user: User): Observable<any> {
+    return this.http.post(`${environment.api_url}register-user`, user, { headers: this.headers, responseType: 'json' });
+  }
 
 }

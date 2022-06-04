@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { User } from 'src/app/core/models/user.model';
+import { AuthenticationService } from 'src/app/core/services/authentication.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -12,6 +14,7 @@ export class SignUpComponent implements OnInit {
   hidePassword = true;
   constructor(
     private formBuilder: FormBuilder,
+    private authenticationService: AuthenticationService
   ) {
     this.registerForm = this.formBuilder.group({
       firstName: ['', Validators.required],
@@ -38,6 +41,35 @@ export class SignUpComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     }
-    
+    if (!this.checkPassword()) {
+      alert('Password and confirm password are not the same! Please try again!');
+      return;
+    }
+    const newUser: User = { username: '', firstName: '', lastName: '', emailAddress: '', password: '', address: '', city: '', country: '', phoneNumber: '', dateOfBirth: new Date(), gender: '' };
+    newUser.username = this.registerForm.value.username;
+    newUser.firstName = this.registerForm.value.firstName;
+    newUser.lastName = this.registerForm.value.lastName;
+    newUser.password = this.registerForm.value.password;
+    newUser.emailAddress = this.registerForm.value.email;
+    newUser.address = this.registerForm.value.address;
+    newUser.city = this.registerForm.value.city;
+    newUser.country = this.registerForm.value.country;
+    newUser.dateOfBirth = this.registerForm.value.date;
+    newUser.phoneNumber = this.registerForm.value.phoneNumber;
+    newUser.gender = this.registerForm.value.gender;
+    this.authenticationService.register(newUser).subscribe((res: any) => {
+      console.log(res);
+      alert('Sucessfully registered! Please check your e-mail to confirm your registration!')
+    },
+      error => {
+        console.log(error.error);
+        alert('Error! Try again!');
+      });
+  }
+
+  checkPassword(): boolean {
+    if (this.registerForm.value.password === this.registerForm.value.confirmPassword)
+      return true;
+    return false;
   }
 }
