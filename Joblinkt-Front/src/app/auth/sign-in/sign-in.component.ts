@@ -39,7 +39,7 @@ export class SignInComponent implements OnInit {
     const login: UserSignIn = { username: '', password: '' };
     login.username = this.loginForm.value.username;
     login.password = this.loginForm.value.password;
-    /*this.authenticationService.signUp(login).subscribe((data: any) => {
+    this.authenticationService.signUp(login).subscribe((data: any) => {
       if(data==null){
         alert('Username od password invalid! Try again!');
         this.loginForm.reset();
@@ -51,7 +51,7 @@ export class SignInComponent implements OnInit {
     },
       error => {
         alert(error.error.message);
-      });*/
+      });
   }
 
 }
