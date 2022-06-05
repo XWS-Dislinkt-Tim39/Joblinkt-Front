@@ -19,7 +19,10 @@ export class CompanyInterviewComponent implements OnInit {
  
   getCompanyInfo(){
     this.company= JSON.parse(localStorage.getItem('selectedCompany') || '');
-    this.interviews=this.company.interviews;
+    if(this.company.interviews.length>0){
+      this.interviews=this.company.interviews;
+    }
+  
   }
   openAddDialog(event: { stopPropagation: () => void; }) {
     this.dilogRef = this.dialog.open(AddInterviewComponent, {

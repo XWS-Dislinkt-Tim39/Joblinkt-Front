@@ -25,7 +25,10 @@ export class CompanyCommentsComponent implements OnInit {
 
   getCompanyInfo(){
     this.company= JSON.parse(localStorage.getItem('selectedCompany') || '');
-    this.comments=this.company.comments;
+    if(this.company.comments.length>0){
+      this.comments=this.company.comments;
+    }
+    
   }
 
 }

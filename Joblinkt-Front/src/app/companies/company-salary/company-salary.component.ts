@@ -25,9 +25,14 @@ export class CompanySalaryComponent implements OnInit {
   displayedColumns: string[] = ['position', 'level', 'average', 'min','max'];
   dataSource = ELEMENT_DATA;
   dilogRef: any;
+  company:any;
+  salaryInfo:any[]=[]
+  salaries:any[]=[];
+
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.getCompanyInfo();
   }
   openAddDialog(event: { stopPropagation: () => void; }) {
     this.dilogRef = this.dialog.open(AddSalaryComponent, {
@@ -35,5 +40,21 @@ export class CompanySalaryComponent implements OnInit {
       }
     });
   }
+  getCompanyInfo(){
+    this.company= JSON.parse(localStorage.getItem('selectedCompany') || '');
+    if(this.company.salaries.length>0){
+      this.salaries=this.company.salaries;
+    }
+   
+   
+  }
+
+  getInfo(){
+    const positions = [...new Set(this.salaries.map(item => item.position))];
+
+  }
+
+
+  
 
 }
