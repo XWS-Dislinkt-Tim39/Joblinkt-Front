@@ -6,5 +6,4 @@ export interface NewComment {
     negative:string;
     copmanyId:string;
     dateOfPublishing:Date;
-
 }

@@ -39,29 +39,19 @@
 
             <div class="comments">
                 <button class="add-interview" (click)="openAddDialog($event)" ><mat-icon>add</mat-icon>Add Interview Process </button>
-                <div class="comment">
+                <div class="comment" *ngFor="let interview of interviews">
                     <div class="commnet-header">
-                        <div>Junior Software Developer</div>
+                        <div>{{interview.positionLevel}} {{interview.position}}</div>
                         <div class="grade">
-                            <div class="date">15.03.2022.</div>
+                            <div class="date">{{interview.dateOfPublishing}}</div>
                             <div>4.7</div>
                         </div>
                     </div>
                     <div class="comment-content">
                         <div class="reaction">HR interview </div>
-                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt
-                            ut labore
-                            et dolore magna aliqua
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore</div>
+                        <div class="text">{{interview.HRInterview}}</div>
                         <div class="reaction">Technical Interview </div>
-                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt
-                            ut labore
-                            et dolore magna aliqua
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore</div>
+                        <div class="text">{{interview.technicalInterview}}</div>
                     </div>
                 </div>
             </div>

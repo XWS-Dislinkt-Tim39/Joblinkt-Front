@@ -9,9 +9,17 @@ import { AddInterviewComponent } from '../add-interview/add-interview.component'
 })
 export class CompanyInterviewComponent implements OnInit {
   dilogRef: any;
+  company:any;
+  interviews:any[]=[]
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.getCompanyInfo();
+  }
+ 
+  getCompanyInfo(){
+    this.company= JSON.parse(localStorage.getItem('selectedCompany') || '');
+    this.interviews=this.company.interviews;
   }
   openAddDialog(event: { stopPropagation: () => void; }) {
     this.dilogRef = this.dialog.open(AddInterviewComponent, {
