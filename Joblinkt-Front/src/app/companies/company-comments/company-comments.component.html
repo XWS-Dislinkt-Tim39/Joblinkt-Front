@@ -39,29 +39,19 @@
 
             <div class="comments">
                 <button class="add-comment"  (click)="openAddDialog($event)" >  <mat-icon>add</mat-icon>Add Comment </button>
-                <div class="comment">
+                <div class="comment" *ngFor="let comment of comments">
                     <div class="commnet-header">
-                        <div>Junior Software Developer</div>
+                        <div>{{comment.positionLevel}} {{comment.position}}</div>
                         <div class="grade">
-                            <div class="date">15.03.2022.</div>
-                            <div>4.7</div>
+                            <div class="date">{{comment.dateOfPublishing}}</div>
+                            <div>{{comment.grade}}</div>
                         </div>
                     </div>
                     <div class="comment-content">
                         <div class="reaction">Positive </div>
-                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt
-                            ut labore
-                            et dolore magna aliqua
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore</div>
+                        <div class="text">{{comment.positive}}</div>
                         <div class="reaction">Negative </div>
-                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt
-                            ut labore
-                            et dolore magna aliqua
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore</div>
+                        <div class="text">{{comment.negative}}</div>
                     </div>
                 </div>
             </div>

@@ -5,5 +5,6 @@ export interface NewInterviewProcess{
     techicalInterview:string;
     HRInterview:string;
     copmanyId:string;
+    dateOfPublishing:Date;
 
 }

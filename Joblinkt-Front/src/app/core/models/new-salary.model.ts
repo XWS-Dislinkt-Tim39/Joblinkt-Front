@@ -3,5 +3,6 @@ export interface NewInterviewProcess{
     positionLevel:string;
     salary:number;
     copmanyId:string;
+    dateOfPublishing:Date;
 
 }

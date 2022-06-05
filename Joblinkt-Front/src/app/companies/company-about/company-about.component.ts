@@ -9,15 +9,33 @@ import { EditCompanyInfoComponent } from '../edit-company-info/edit-company-info
 })
 export class CompanyAboutComponent implements OnInit {
   dilogRef: any;
+  company:any;
+  averageGrade:number=0;
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.getCompanyInfo();
+    this.calculateAverageGrade();
   }
   openAddDialog(event: { stopPropagation: () => void; }) {
     this.dilogRef = this.dialog.open(EditCompanyInfoComponent, {
       data: {
       }
     });
+  }
+
+  getCompanyInfo(){
+    this.company= JSON.parse(localStorage.getItem('selectedCompany') || '');
+  }
+
+  calculateAverageGrade(){
+    if(this.company?.comments.length()>0){
+      this.company.comments.forEach((value: any, i: any) => {
+        this.averageGrade=this.averageGrade+value.grade;
+      });
+      this.averageGrade=this.averageGrade/this.company.comments.length();
+    }
+   
   }
 
 }
