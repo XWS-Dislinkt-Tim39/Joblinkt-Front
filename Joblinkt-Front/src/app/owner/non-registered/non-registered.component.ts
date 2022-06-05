@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CompanyService } from 'src/app/core/services/company.service';
+import { JwtService } from 'src/app/core/services/jwt.service';
 
 @Component({
   selector: 'app-non-registered',
@@ -6,10 +8,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./non-registered.component.scss']
 })
 export class NonRegisteredComponent implements OnInit {
-
-  constructor() { }
+  comapnies:any[]=[];
+  nonRegisteredCompanies:any[]=[];
+  ownerId:any;
+  constructor(
+    private companyService:CompanyService,
+    private jwtService:JwtService) { }
 
   ngOnInit(): void {
+    //this.ownerId=this.jwtService.getUserId();
   }
 
+  getMyCompanies(){
+    this.companyService.getAllCompaniesbyOwner(this.ownerId).subscribe(data=>{
+      this.comapnies=data;
+      this.comapnies.forEach((value: any, i: any) => {
+        if(value.isApproved==false){
+          this.nonRegisteredCompanies.push(value);
+        }
+      });
+    },error=>{
+      alert('Error! Try again!');
+    })
+  }
 }

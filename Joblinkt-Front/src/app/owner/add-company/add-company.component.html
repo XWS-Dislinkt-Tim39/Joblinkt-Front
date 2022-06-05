@@ -28,7 +28,7 @@
             <div class="position">
             <mat-form-field appearance="outline">
                 <mat-label>Phone number*</mat-label>
-                <input formControlName="phone" matInput placeholder="Enter phone number">
+                <input type="number" formControlName="phone" matInput placeholder="Enter phone number">
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Email*</mat-label>
@@ -44,7 +44,7 @@
 
     </div>
     <div mat-dialog-actions class="dialog-actions">
-        <button class="yes-button" mat-raised-button mat-dialog-close>Send request</button>
+        <button class="yes-button" mat-raised-button mat-dialog-close (click)="registerCompany()">Send request</button>
         <button class="cancel-button" mat-raised-button mat-dialog-close raised>Close</button>
     </div>
 </div>
