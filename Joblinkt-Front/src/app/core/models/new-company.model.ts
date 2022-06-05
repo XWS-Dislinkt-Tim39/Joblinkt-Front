@@ -8,5 +8,5 @@ export interface NewCompany {
     email:string;
     description:string;
     ownerId:string;
-    isApproved:string;
+    isApproved:boolean;
 }
