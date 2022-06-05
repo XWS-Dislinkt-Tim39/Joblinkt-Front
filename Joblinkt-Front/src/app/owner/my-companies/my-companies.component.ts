@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { AddCommentComponent } from 'src/app/companies/add-comment/add-comment.component';
 import { EditCompanyInfoComponent } from 'src/app/companies/edit-company-info/edit-company-info.component';
 import { CompanyService } from 'src/app/core/services/company.service';
@@ -18,6 +19,7 @@ export class MyCompaniesComponent implements OnInit {
   ownerId:any;
   constructor(public dialog: MatDialog,
     private companyService:CompanyService,
+    private router:Router,
     private jwtService:JwtService) { }
 
   ngOnInit(): void {
@@ -41,6 +43,12 @@ export class MyCompaniesComponent implements OnInit {
     },error=>{
       alert('Error! Try again!');
     })
+  }
+
+  viewCompany(company:any){
+    localStorage.removeItem('selectedCompany');
+    localStorage.setItem('selectedCompany', JSON.stringify(company));
+    this.router.navigate(['/company-about']);  
   }
 
 }
