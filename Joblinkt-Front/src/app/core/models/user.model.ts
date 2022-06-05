@@ -9,5 +9,5 @@ export interface User {
     country: string;
     phoneNumber: string;
     dateOfBirth: Date;
-    gender: string;
+    role: string;
 }

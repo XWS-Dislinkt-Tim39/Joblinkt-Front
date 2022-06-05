@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ErrorMatcher } from 'src/app/core/error/error-matcher';
 import { UserSignIn } from 'src/app/core/models/user-sign-in.model';
 import { AuthenticationService } from 'src/app/core/services/authentication.service';
+import { CompanyService } from 'src/app/core/services/company.service';
 import { JwtService } from 'src/app/core/services/jwt.service';
 
 @Component({
@@ -19,8 +20,8 @@ export class SignInComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private authenticationService: AuthenticationService,
-    private jwtService: JwtService
+    private jwtService: JwtService,
+    private authenticationService:AuthenticationService
   ) {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
@@ -39,7 +40,8 @@ export class SignInComponent implements OnInit {
     const login: UserSignIn = { username: '', password: '' };
     login.username = this.loginForm.value.username;
     login.password = this.loginForm.value.password;
-    this.authenticationService.signUp(login).subscribe((data: any) => {
+    console.log(login)
+    this.authenticationService.signIn(login).subscribe((data: any) => {
       if(data==null){
         alert('Username od password invalid! Try again!');
         this.loginForm.reset();
@@ -52,6 +54,9 @@ export class SignInComponent implements OnInit {
       error => {
         alert(error.error.message);
       });
+
+
   }
+
 
 }

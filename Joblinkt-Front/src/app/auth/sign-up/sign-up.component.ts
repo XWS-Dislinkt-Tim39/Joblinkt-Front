@@ -14,7 +14,7 @@ export class SignUpComponent implements OnInit {
   hidePassword = true;
   constructor(
     private formBuilder: FormBuilder,
-    private authenticationService: AuthenticationService
+    private authenticationService:AuthenticationService
   ) {
     this.registerForm = this.formBuilder.group({
       firstName: ['', Validators.required],
@@ -27,8 +27,7 @@ export class SignUpComponent implements OnInit {
       city: ['', Validators.required],
       country: ['', Validators.required],
       phoneNumber: ['', Validators.required],
-      date: [''],
-      gender: ['', Validators.required]
+      date: ['']
     });
   }
 
@@ -45,7 +44,7 @@ export class SignUpComponent implements OnInit {
       alert('Password and confirm password are not the same! Please try again!');
       return;
     }
-    const newUser: User = { username: '', firstName: '', lastName: '', emailAddress: '', password: '', address: '', city: '', country: '', phoneNumber: '', dateOfBirth: new Date(), gender: '' };
+    const newUser: User = { username: '', firstName: '', lastName: '', emailAddress: '', password: '', address: '', city: '', country: '', phoneNumber: '', dateOfBirth: new Date(), role: '' };
     newUser.username = this.registerForm.value.username;
     newUser.firstName = this.registerForm.value.firstName;
     newUser.lastName = this.registerForm.value.lastName;
@@ -56,10 +55,11 @@ export class SignUpComponent implements OnInit {
     newUser.country = this.registerForm.value.country;
     newUser.dateOfBirth = this.registerForm.value.date;
     newUser.phoneNumber = this.registerForm.value.phoneNumber;
-    newUser.gender = this.registerForm.value.gender;
+    newUser.role="User";
     this.authenticationService.register(newUser).subscribe((res: any) => {
       console.log(res);
       alert('Sucessfully registered! Please check your e-mail to confirm your registration!')
+      // this.router.navigate(['/registration-success']);
     },
       error => {
         console.log(error.error);

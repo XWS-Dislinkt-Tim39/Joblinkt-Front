@@ -10,6 +10,7 @@ import { CompaniesModule } from './companies/companies.module';
 import { OwnerModule } from './owner/owner.module';
 import { AdminModule } from './admin/admin.module';
 import { CoreModule } from './core/core.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CoreModule } from './core/core.module';
     CompaniesModule,
     OwnerModule,
     AdminModule,
-    CoreModule
+    CoreModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
