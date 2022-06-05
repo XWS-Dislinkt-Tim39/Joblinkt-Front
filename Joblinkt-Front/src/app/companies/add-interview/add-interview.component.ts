@@ -47,7 +47,7 @@ export class AddInterviewComponent implements OnInit {
     this.newInterview.copmanyId=this.company.id;
     console.log(this.newInterview);
     this.companyService.addInterviewProcess(this.newInterview).subscribe(data=>{
-      alert('Successfully added new comment');
+      alert('Successfully added new interview process review');
     },error=>{
       alert('Error!')
     })

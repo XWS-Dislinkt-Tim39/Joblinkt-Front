@@ -10,21 +10,21 @@
             <div class="position">
                 <mat-form-field appearance="outline">
                     <mat-label>Choose position level</mat-label>
-                    <mat-select>
-                        <mat-option>
+                    <mat-select  [(value)]="level"> 
+                        <mat-option value="Junior">
                             Junior
                         </mat-option>
-                        <mat-option>
+                        <mat-option  value="Medior">
                             Medior
                         </mat-option>
-                        <mat-option>
+                        <mat-option  value="Senior">
                             Senior
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label>Salary*</mat-label>
-                    <input formControlName="grade" type="number"  min="1" matInput placeholder="Enter salary">
+                    <input formControlName="salary" type="number"  min="1" matInput placeholder="Enter salary">
                 </mat-form-field>
             </div>
            
@@ -33,7 +33,7 @@
 
     </div>
     <div mat-dialog-actions class="dialog-actions">
-        <button class="yes-button" mat-raised-button mat-dialog-close>Add</button>
+        <button class="yes-button" mat-raised-button mat-dialog-close (click)="addSalary()">Add</button>
         <button class="cancel-button" mat-raised-button mat-dialog-close raised>Close</button>
     </div>
 </div>
