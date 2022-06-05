@@ -44,12 +44,12 @@ export class SignUpComponent implements OnInit {
       alert('Password and confirm password are not the same! Please try again!');
       return;
     }
-    const newUser: User = { username: '', firstName: '', lastName: '', emailAddress: '', password: '', address: '', city: '', country: '', phoneNumber: '', dateOfBirth: new Date(), role: '' };
+    const newUser: User = { id:'045322d5-6ae9-436c-90a7-cdfa4b866a49',username: '', firstName: '', lastName: '', email: '', password: '', address: '', city: '', country: '', phoneNumber: '', dateOfBirth: new Date(), role: '',isApproved:true };
     newUser.username = this.registerForm.value.username;
     newUser.firstName = this.registerForm.value.firstName;
     newUser.lastName = this.registerForm.value.lastName;
     newUser.password = this.registerForm.value.password;
-    newUser.emailAddress = this.registerForm.value.email;
+    newUser.email = this.registerForm.value.email;
     newUser.address = this.registerForm.value.address;
     newUser.city = this.registerForm.value.city;
     newUser.country = this.registerForm.value.country;

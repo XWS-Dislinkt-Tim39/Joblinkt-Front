@@ -1,8 +1,9 @@
 export interface User {
+    id:string
     username: string;
     firstName: string;
     lastName: string;
-    emailAddress: string;
+    email: string;
     password: string;
     address: string;
     city: string;
@@ -10,4 +11,5 @@ export interface User {
     phoneNumber: string;
     dateOfBirth: Date;
     role: string;
+    isApproved:boolean
 }
