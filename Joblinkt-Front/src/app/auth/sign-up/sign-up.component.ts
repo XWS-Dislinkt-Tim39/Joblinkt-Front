@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Role } from 'src/app/core/models/level.model';
 import { User } from 'src/app/core/models/user.model';
 import { AuthenticationService } from 'src/app/core/services/authentication.service';
 
@@ -12,6 +13,20 @@ export class SignUpComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
   hidePassword = true;
+  newUser:User={
+    email:'',
+    password:'',
+    username:'',
+    firstName:'',
+    lastName:'',
+    dateOfBirth:new Date(),
+    address:'',
+    city:'',
+    country:'',
+    phoneNumber:'',
+    role:Role.User,
+    isApproved:true
+  }
   constructor(
     private formBuilder: FormBuilder,
     private authenticationService:AuthenticationService
@@ -44,20 +59,20 @@ export class SignUpComponent implements OnInit {
       alert('Password and confirm password are not the same! Please try again!');
       return;
     }
-    const newUser: User = { id:'045322d5-6ae9-436c-90a7-cdfa4b866a49',username: '', firstName: '', lastName: '', email: '', password: '', address: '', city: '', country: '', phoneNumber: '', dateOfBirth: new Date(), role: '',isApproved:true };
-    newUser.username = this.registerForm.value.username;
-    newUser.firstName = this.registerForm.value.firstName;
-    newUser.lastName = this.registerForm.value.lastName;
-    newUser.password = this.registerForm.value.password;
-    newUser.email = this.registerForm.value.email;
-    newUser.address = this.registerForm.value.address;
-    newUser.city = this.registerForm.value.city;
-    newUser.country = this.registerForm.value.country;
-    newUser.dateOfBirth = this.registerForm.value.date;
-    newUser.phoneNumber = this.registerForm.value.phoneNumber;
-    newUser.role="User";
-    this.authenticationService.register(newUser).subscribe((res: any) => {
-      console.log(res);
+    this.newUser.username = this.registerForm.value.username;
+    this.newUser.firstName = this.registerForm.value.firstName;
+    this.newUser.lastName = this.registerForm.value.lastName;
+    this.newUser.password = this.registerForm.value.password;
+    this.newUser.email = this.registerForm.value.email;
+    this.newUser.address = this.registerForm.value.address;
+    this.newUser.city = this.registerForm.value.city;
+    this.newUser.country = this.registerForm.value.country;
+    this.newUser.dateOfBirth = this.registerForm.value.date;
+    this.newUser.phoneNumber = this.registerForm.value.phoneNumber;
+    this.newUser.firstName='sdfdsfs';
+    console.log(this.newUser);
+    this.authenticationService.register(this.newUser).subscribe((res: any) => {
+      
       alert('Sucessfully registered! Please check your e-mail to confirm your registration!')
       // this.router.navigate(['/registration-success']);
     },

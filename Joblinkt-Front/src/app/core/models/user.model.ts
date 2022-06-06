@@ -1,15 +1,18 @@
+import { Role } from "./level.model";
+
 export interface User {
-    id:string
+    email: string;
+    password: string;
     username: string;
     firstName: string;
     lastName: string;
-    email: string;
-    password: string;
+    dateOfBirth: Date;
+   
     address: string;
     city: string;
     country: string;
     phoneNumber: string;
-    dateOfBirth: Date;
-    role: string;
+  
+    role: Role;
     isApproved:boolean
 }

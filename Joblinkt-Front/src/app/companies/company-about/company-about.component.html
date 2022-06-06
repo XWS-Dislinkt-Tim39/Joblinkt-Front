@@ -8,12 +8,12 @@
                     src="https://www.pngkit.com/png/full/130-1306176_company-building-icon-png.png">
             </div>
             <div class="info">
-                <div class="mat-h2">IT Company</div>
-                <div class="mat-h3">Novi Sad, Srbija</div>
-                <div class="industry">Software outsourcing</div>
+                <div class="mat-h2">{{company?.name}}</div>
+                <div class="mat-h3">{{company?.city}}, {{company?.country}}</div>
+                <div class="industry">{{company?.category}}</div>
 
             </div>
-            <div class="mat-h2">4.7</div>
+            <div class="mat-h2">{{averageGrade}}</div>
         </div>
         </div>
 
@@ -36,21 +36,7 @@
                 <button class="edit-button"  (click)="openAddDialog($event)"><mat-icon>edit</mat-icon>Edit company info</button>
                 <div class="company">
                     <div class="body mat-body-1">
-                        <div> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                            ut labore
-                            et dolore magna aliqua
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore
-                            et dolore magna aliqua
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore<br><br>
-                            et dolore magna aliqua.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore<br><br>
-                            et dolore magna aliqua
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore
-                            et dolore magna aliqua.</div>
+                        <div>{{company?.description}}</div>
                     </div>
                   
                 </div>

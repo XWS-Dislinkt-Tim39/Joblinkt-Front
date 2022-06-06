@@ -21,13 +21,13 @@ export class AuthenticationService {
   signIn(user: UserSignIn): Observable<any> {
     return this.http.get(`${environment.api_url}sign-in`, {
       params: {
-        username: user.username,
+        email: user.username,
         password: user.password
       }, headers: this.headers, responseType: 'json'
     });
   }
 
   register(user: User): Observable<any> {
-    return this.http.post(`${environment.api_url}register`, user, { headers: this.headers, responseType: 'json' });
+    return this.http.post(`${environment.api_url}register`,user, {headers:this.headers, responseType: 'json' });
   }
 }

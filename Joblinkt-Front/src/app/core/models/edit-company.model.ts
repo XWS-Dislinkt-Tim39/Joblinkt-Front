@@ -1,4 +1,5 @@
-export interface NewCompany {
+export interface EditCompany {
+    id:string,
     name: string;
     address:string;
     city:string;
@@ -7,6 +8,4 @@ export interface NewCompany {
     description:string;
     category: string;
     email:string;
-    ownerId:string;
-    isApproved:boolean;
 }

@@ -16,14 +16,18 @@ export class NonRegisteredComponent implements OnInit {
     private jwtService:JwtService) { }
 
   ngOnInit(): void {
-    //this.ownerId=this.jwtService.getUserId();
+    this.ownerId=this.jwtService.getUserId();
+    this.getMyCompanies();
   }
 
   getMyCompanies(){
     this.companyService.getAllCompaniesbyOwner(this.ownerId).subscribe(data=>{
       this.comapnies=data;
+      alert(this.comapnies.length)
       this.comapnies.forEach((value: any, i: any) => {
+  
         if(value.isApproved==false){
+          alert(value.name)
           this.nonRegisteredCompanies.push(value);
         }
       });

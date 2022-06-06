@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { NewComment } from '../models/new-comment.model';
 import { NewInterviewProcess } from '../models/new-interview-proccess.model';
+import { NewSalary } from '../models/new-salary.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +20,8 @@ export class CompanyReviewService {
   addInterviewProcess(interview: NewInterviewProcess): Observable<any> {
     return this.http.post(`${environment.api_url}add-interview-process`, interview, { headers: this.headers, responseType: 'json' });
   }
-  addSalary(interview: NewInterviewProcess): Observable<any> {
-    return this.http.post(`${environment.api_url}add-salary`, interview, { headers: this.headers, responseType: 'json' });
+  addSalary(salary: NewSalary): Observable<any> {
+    return this.http.post(`${environment.api_url}add-salary`, salary, { headers: this.headers, responseType: 'json' });
   }
 
  

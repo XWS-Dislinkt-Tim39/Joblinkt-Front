@@ -47,8 +47,9 @@ export class SignInComponent implements OnInit {
         this.loginForm.reset();
       }
       else{
+        alert(data.id)
         this.jwtService.saveUserDetails(data);
-        this.router.navigate(['/dashboard']);  
+        this.router.navigate(['/search-company']);  
       }
     },
       error => {

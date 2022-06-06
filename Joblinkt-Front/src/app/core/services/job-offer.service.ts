@@ -25,7 +25,7 @@ export class JobOfferService {
   }
 
   getAllByCompany(userId: string): Observable<any> {
-    return this.http.get(`${environment.api_url}get-company-jobs`,
+    return this.http.get(`${environment.api_url}get-by-company-id`,
       {
         params: { userId: userId },
         headers: this.headers, responseType: 'json'
