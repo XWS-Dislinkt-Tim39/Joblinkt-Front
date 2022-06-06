@@ -32,8 +32,10 @@ export class CompanyService {
   sendCompanyRequest(company: NewCompany): Observable<any> {
     return this.http.post(`${environment.api_url}create-company`, company, { headers: this.headers, responseType: 'json' });
   }
-  approveCompany(company: NewCompany): Observable<any> {
-    return this.http.post(`${environment.api_url}approve-company`, company, { headers: this.headers, responseType: 'json' });
+  approveCompany(companyId: string): Observable<any> {
+    return this.http.get(`${environment.api_url}approve-company`, {params:{
+      id:companyId
+    } ,headers: this.headers, responseType: 'json' });
   }
   getCompanyInfo(companyId: string): Observable<any> {
     return this.http.get(`${environment.api_url}get-company`, {

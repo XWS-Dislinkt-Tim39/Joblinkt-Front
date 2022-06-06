@@ -42,6 +42,16 @@ export class CompanyRequestsComponent implements OnInit {
     },error=>{
       alert('Error! Try again!');
     })
+
   }
  
+  accept(row:any){
+    alert(row.id)
+    this.companyService.approveCompany(row.id).subscribe(data=>{
+      alert('Succesfully');
+      window.location.reload();
+    },error=>{
+      alert('Error!')
+    })
+  }
 }

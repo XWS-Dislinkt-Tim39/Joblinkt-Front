@@ -35,7 +35,7 @@
           
             <ng-container matColumnDef="min">
                 <th mat-header-cell *matHeaderCellDef></th>
-                <td mat-cell *matCellDef="let element"> <button class="accept" mat-button >Accept</button></td>
+                <td mat-cell *matCellDef="let element"> <button class="accept" mat-button (click)="accept(element)">Accept</button></td>
               </ng-container>\
               <ng-container matColumnDef="max">
                 <th mat-header-cell *matHeaderCellDef></th>
