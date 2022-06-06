@@ -20,6 +20,7 @@ export class CompanyAboutComponent implements OnInit {
   openAddDialog(event: { stopPropagation: () => void; }) {
     this.dilogRef = this.dialog.open(EditCompanyInfoComponent, {
       data: {
+        selectedCompany:this.company
       }
     });
   }
@@ -29,13 +30,14 @@ export class CompanyAboutComponent implements OnInit {
   }
 
   calculateAverageGrade(){
-    if(this.company?.comments.length()>0){
+    if(this.company?.comments.length>0){
       this.company.comments.forEach((value: any, i: any) => {
         this.averageGrade=this.averageGrade+value.grade;
       });
-      this.averageGrade=this.averageGrade/this.company.comments.length();
+      this.averageGrade=this.averageGrade/this.company.comments.length;
     }
    
   }
+
 
 }

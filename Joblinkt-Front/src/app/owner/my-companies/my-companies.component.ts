@@ -23,7 +23,8 @@ export class MyCompaniesComponent implements OnInit {
     private jwtService:JwtService) { }
 
   ngOnInit(): void {
-    //this.ownerId=this.jwtService.getUserId();
+    this.ownerId=this.jwtService.getUserId();
+    this.getMyCompanies();
   }
   openAddDialog(event: { stopPropagation: () => void; }) {
     this.dilogRef = this.dialog.open(AddCompanyComponent, {
