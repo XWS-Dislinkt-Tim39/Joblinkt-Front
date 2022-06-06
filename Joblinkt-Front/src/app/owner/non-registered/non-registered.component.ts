@@ -23,11 +23,8 @@ export class NonRegisteredComponent implements OnInit {
   getMyCompanies(){
     this.companyService.getAllCompaniesbyOwner(this.ownerId).subscribe(data=>{
       this.comapnies=data;
-      alert(this.comapnies.length)
       this.comapnies.forEach((value: any, i: any) => {
-  
         if(value.isApproved==false){
-          alert(value.name)
           this.nonRegisteredCompanies.push(value);
         }
       });

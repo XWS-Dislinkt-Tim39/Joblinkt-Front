@@ -17,6 +17,9 @@ export class CompanyService {
   getAllRegisteredCompanies(): Observable<any> {
     return this.http.get(`${environment.api_url}get-registered-companies`, { headers: this.headers, responseType: 'json' });
   }
+  getAllUnregisteredCompanies(): Observable<any> {
+    return this.http.get(`${environment.api_url}get-unregistered-companies`, { headers: this.headers, responseType: 'json' });
+  }
   getAllCompaniesbyOwner(ownerId: string): Observable<any> {
     return this.http.get(`${environment.api_url}get-by-owner-id`, {
       params: {
