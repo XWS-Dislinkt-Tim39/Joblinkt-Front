@@ -74,6 +74,7 @@ export class EditCompanyInfoComponent implements OnInit {
     console.log(this.editedCompany);
     this.companyService.editAboutInfo(this.editedCompany).subscribe(data=>{
       alert('succesfully edited');
+      window.location.reload();
     },error=>{
       alert('Error!Try again!')
     })

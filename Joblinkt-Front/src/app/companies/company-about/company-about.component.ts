@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { CompanyService } from 'src/app/core/services/company.service';
 import { EditCompanyInfoComponent } from '../edit-company-info/edit-company-info.component';
 
 @Component({
@@ -10,8 +11,10 @@ import { EditCompanyInfoComponent } from '../edit-company-info/edit-company-info
 export class CompanyAboutComponent implements OnInit {
   dilogRef: any;
   company:any;
+  id:any;
   averageGrade:number=0;
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,
+    private companyService:CompanyService) { }
 
   ngOnInit(): void {
     this.getCompanyInfo();
@@ -26,7 +29,13 @@ export class CompanyAboutComponent implements OnInit {
   }
 
   getCompanyInfo(){
-    this.company= JSON.parse(localStorage.getItem('selectedCompany') || '');
+    this.id= JSON.parse(localStorage.getItem('selectedCompany') || '').id;
+    this.companyService.getCompanyInfo(this.id).subscribe(data=>{
+      this.company=data;
+      this.calculateAverageGrade();
+    },error=>{
+      alert('Error!')
+    })
   }
 
   calculateAverageGrade(){
