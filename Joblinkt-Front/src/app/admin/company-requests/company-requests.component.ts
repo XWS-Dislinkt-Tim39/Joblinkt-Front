@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { CompanyService } from 'src/app/core/services/company.service';
+import { JwtService } from 'src/app/core/services/jwt.service';
 export interface PeriodicElement {
   position: string;
   level: string;
@@ -18,12 +20,38 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./company-requests.component.scss']
 })
 export class CompanyRequestsComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'level', 'average', 'min','max'];
+  displayedColumns: string[] = ['position', 'level',  'min','max'];
   dataSource = ELEMENT_DATA;
   dilogRef: any;
-  constructor(public dialog: MatDialog) { }
-
+  comapnies:any[]=[];
+  nonRegisteredCompanies:any[]=[];
+  ownerId:any;
+  constructor(
+    private companyService:CompanyService,
+    private jwtService:JwtService) { }
   ngOnInit(): void {
+    this.getCompanies();
+   
+  }
+
+    getCompanies(){
+    this.companyService.getAllUnregisteredCompanies().subscribe(data=>{
+      this.comapnies=data;
+      this.dataSource=this.comapnies;
+      
+    },error=>{
+      alert('Error! Try again!');
+    })
+
   }
  
+  accept(row:any){
+    alert(row.id)
+    this.companyService.approveCompany(row.id).subscribe(data=>{
+      alert('Succesfully');
+      window.location.reload();
+    },error=>{
+      alert('Error!')
+    })
+  }
 }

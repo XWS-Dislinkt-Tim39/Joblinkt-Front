@@ -24,6 +24,7 @@ import { JobViewComponent } from './job-view/job-view.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { AddJobOfferComponent } from './add-job-offer/add-job-offer.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -52,10 +53,11 @@ import { AddJobOfferComponent } from './add-job-offer/add-job-offer.component';
     MatFormFieldModule,
     MatIconModule,
     RouterModule,
+    MatCheckboxModule,
     MatDialogModule,
     MatTableModule,
     MatGridListModule,
-    MatDatepickerModule
+    MatDatepickerModule,
   ],
   exports: [
     CompanyCommentsComponent,

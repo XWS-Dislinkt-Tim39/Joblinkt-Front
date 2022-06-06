@@ -15,7 +15,7 @@ export class JobOfferService {
 
 
   addJobOffer(newJob: NewJobOffer): Observable<any> {
-    return this.http.post(`${environment.api_url}add-job-offer`, newJob,
+    return this.http.post(`${environment.api_url}create-job`, newJob,
       { headers: this.headers, responseType: 'json' });
   }
 

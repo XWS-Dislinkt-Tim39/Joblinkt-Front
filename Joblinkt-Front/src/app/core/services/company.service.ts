@@ -17,6 +17,9 @@ export class CompanyService {
   getAllRegisteredCompanies(): Observable<any> {
     return this.http.get(`${environment.api_url}get-registered-companies`, { headers: this.headers, responseType: 'json' });
   }
+  getAllUnregisteredCompanies(): Observable<any> {
+    return this.http.get(`${environment.api_url}get-unregistered-companies`, { headers: this.headers, responseType: 'json' });
+  }
   getAllCompaniesbyOwner(ownerId: string): Observable<any> {
     return this.http.get(`${environment.api_url}get-by-owner-id`, {
       params: {
@@ -29,8 +32,10 @@ export class CompanyService {
   sendCompanyRequest(company: NewCompany): Observable<any> {
     return this.http.post(`${environment.api_url}create-company`, company, { headers: this.headers, responseType: 'json' });
   }
-  approveCompany(company: NewCompany): Observable<any> {
-    return this.http.post(`${environment.api_url}approve-company`, company, { headers: this.headers, responseType: 'json' });
+  approveCompany(companyId: string): Observable<any> {
+    return this.http.get(`${environment.api_url}approve-company`, {params:{
+      id:companyId
+    } ,headers: this.headers, responseType: 'json' });
   }
   getCompanyInfo(companyId: string): Observable<any> {
     return this.http.get(`${environment.api_url}get-company`, {
